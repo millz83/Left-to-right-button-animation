@@ -1,0 +1,69 @@
+:root {
+    --color-primary: #2522e6;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-sherif;
+    background-color: #2eb4ae; 
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+    background-blend-mode: soft-light,screen;
+    height: 100vh;
+    color: #ffffff;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+.btn {
+    position: relative;
+    background: transparent;
+    border: 3px solid var(--color-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 10px;
+    color: var(--color-primary);
+    
+    transition: color 200ms;
+  }
+  
+  .btn:hover {
+    color: #2eb4ae;
+  }
+  
+  .btn::before {
+    content: '';
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    transition: transform 500ms;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  }
+  
+  .btn-slide-left::before {
+    transform: scaleX(0);
+  }
+  
+  .btn-slide-left:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .btn-slide-top::before {
+    transform: scaleY(0);
+  }
+  
+  .btn-slide-top:hover::before {
+    transform: scaleY(1);
+  }
+  
